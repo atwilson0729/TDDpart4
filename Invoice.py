@@ -53,6 +53,13 @@ class Invoice:
                 self.total_discount = total_discount
                 return total_discount
 
+        def totalCount(self, products):
+            total_count = 0
+            for k, v in products.items():
+                total_count += (int(v['qnt']))
+                self.total_count = total_count
+            return total_count
+
         def totalPurePrice(self, products):
             total_pure_price = self.totalImpurePrice(products)-self.totalDiscount(products)
             return total_pure_price
